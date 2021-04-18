@@ -72,11 +72,11 @@ function loadNextQuestion() {
     selectedOption.checked = false;
     currentQuestion++;
 
-    if (currentQuestion == totalQuestions -1 ) {
+    if (currentQuestion == totalQuestions - 1) {
         nextButton.textContent = 'Finish';
 
     }
-    if(currentQuestion == totalQuestions);
+    if (currentQuestion == totalQuestions);
     container.style.display = 'none';
     resultCount.style.display = '';
     resultCount.textContent = 'Your Score: ' + score;
@@ -88,3 +88,20 @@ loadQuestion(currentQuestion);
 // }
 
 // loadQuestion(currentQuestion);
+document.addEventListener('DOMContentLoaded', () => {
+    const timeLeftDisplay = document.querySelector('#time-left')
+    const startBtn = document.querySelector('#start-button')
+    timeLeft = 30
+
+    function countDown() {
+        setInterval(funtion());
+            if(timeLeft <= 0) {
+              clearInterval(timeLeft = 0)  
+            }
+        timeLeftDisplay.innerHTML = timeLeft
+        timeLeft -=1
+    }; 1000;
+
+ startBtn.addEventListener('click', countDown)
+ 
+})
